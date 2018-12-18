@@ -1,0 +1,20 @@
+server:
+  port: 8181
+
+# Map paths with the pattern /resource/** on the client server to the same
+# paths on the resource server at localhost:9000
+zuul:
+  routes:
+    resource:
+      path: /resource/**
+      url: http://localhost:9000/resource
+      sensitive-headers:
+
+logging:
+  level:
+    org.springframework:
+      security: trace
+
+spring:
+  application:
+    name: client
